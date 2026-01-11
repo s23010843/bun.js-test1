@@ -1,5 +1,9 @@
+
 const server = Bun.serve({
   port: 3000,
+  routes: {
+    "/static/*": Bun.file("./docs")
+  },
   fetch(req) {
     const url = new URL(req.url);
 
