@@ -1,7 +1,17 @@
 const server = Bun.serve({
-  port: 5000,
+  port: 3000,
   fetch(req) {
-    return new Response("Hello from Bun server!");
+    const url = new URL(req.url);
+
+    if (url.pathname === "/") {
+      return new Response("Home");
+    }
+
+    if (url.pathname === "/health") {
+      return new Response("OK");
+    }
+
+    return new Response("Not Found", { status: 404 });
   },
 });
 
