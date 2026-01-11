@@ -4,12 +4,16 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "gh-pages": "^6.0.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "scripts": {
-    "build": "bun build server.ts"
-  }
+    "build": "bun build server.ts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d docs"
+  },
+  "homepage": "https://s23010843.github.io/bun.js-test1"
 }

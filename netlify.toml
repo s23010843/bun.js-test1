@@ -1,6 +1,0 @@
-[build]
-  publish = ""
-  command = "bun run build"
-
-[dev]
-  command = "bun run server.ts"
